@@ -3,11 +3,9 @@ services:
     image: ghcr.io/wg-easy/wg-easy:latest
     container_name: wg-easy
     hostname: wg-easy
+    network_mode: host
     volumes:
       - /srv/wg-easy:/etc/wireguard
-    ports:
-      - "443:443/udp"
-      - "8082:8082/tcp"
     environment:
       LANG: en
       PORT: 8082
